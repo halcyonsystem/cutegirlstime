@@ -1,6 +1,11 @@
-import { Text, View } from "react-native";
+import { useState } from "react";
+import Calendar from 'react-calendar';
+import { Button, TextInput, View } from "react-native";
 
 export default function Index() {
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+
   return (
     <View
       style={{
@@ -9,7 +14,43 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <TextInput
+        style={{
+          height: 40,
+          borderColor: "gray",
+          borderWidth: 1,
+          width: 250,
+          marginBottom: 12,
+          paddingHorizontal: 10,
+        }}
+        placeholder="Goal Name"
+        value={name}
+        onChangeText={setName}
+      />
+      <TextInput
+        style={{
+          height: 80,
+          borderColor: "gray",
+          borderWidth: 1,
+          width: 250,
+          marginBottom: 20,
+          paddingHorizontal: 10,
+          textAlignVertical: "top",
+        }}
+        placeholder="Goal Description"
+        value={description}
+        onChangeText={setDescription}
+        multiline
+        numberOfLines={4}
+      />
+      <Calendar
+      />
+      <Button
+        onPress={() => {
+
+        }}
+        title={'Add Goal'}
+      />
     </View>
   );
 }
