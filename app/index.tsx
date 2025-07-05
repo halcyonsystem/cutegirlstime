@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Calendar from 'react-calendar';
+import Calendar from 'react-native-calendar';
 import { Button, TextInput, View } from "react-native";
 
 export default function Index() {
