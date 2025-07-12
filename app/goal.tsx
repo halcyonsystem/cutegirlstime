@@ -5,6 +5,7 @@ import { Calendar } from 'react-native-calendars';
 export default function Index() {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const [goaldate, setDate] = useState("");
 
   return (
     <View
@@ -44,11 +45,16 @@ export default function Index() {
         numberOfLines={4}
       />
       <Calendar 
+        onDayPress={day => {
+        setDate(day.dateString);
+      }}
       />
       <Button
         onPress={() => {
-          // You can use 'name' and 'description' here
-        }}
+          console.log("Goal Name:", name);
+          console.log("Goal Description:", description);
+          console.log("Goal Date:", goaldate);}
+        }
         title={'Add Goal'}
       />
     </View>
